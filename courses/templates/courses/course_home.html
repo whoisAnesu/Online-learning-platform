@@ -1,0 +1,65 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' media='screen' href="{% static 'styles/course.css' %}"></link>
+</head>
+<header id="header">
+    <div class="logo">
+        <a href="{% url 'home' %}"><img src="{% static 'images/book.png'%}" alt="" class="logo"></a>
+    </div>
+    <div class="search">  
+        <form  method="GET" action="{% url 'rooms_home' %}">
+            <input type="text" name="q" placeholder="Search Here...."/>
+        </form>
+    </div>
+</header>
+<body>
+<div class="container">
+        <div class="assignment">
+            <div class="notice">
+                <div id="ass">
+                    <h5>Assignments Due:</h5>
+                    {% for assignment in assignments %}
+                    {% if assignment.done == False %}
+                    <a href="{{assignment.pdf_ass.url}}">
+                        <div id="theass">
+                            <h6>{{assignment.title}}</h6>
+                        </div>
+                    </a>
+                    {% endif%}
+                    {% endfor %}
+                </div>
+                <div id="quiz">
+                    <a href="{% url 'quiz:main-view' %}"><div id="quiz-div"><h2>Take quiz</h2></div></a>
+                    <a href="{% url 'submitass' %}"><div id="quiz-div"><h2>Submit Assignments here</h2></div></a>
+                </div>
+            </div>
+            <div class="resource">
+                <a href="{% url 'books' pk=course.id %}">
+                <div class="books">
+                    <a href="{% url 'books' pk=course.id %}"><h2>Books</h2></a>
+                </div>
+                </a>
+                <a href="{% url 'video' pk=course.id %}">
+                <div class="tutorials">
+                    <a href="{% url 'video' pk=course.id %}"><h2>video</h2></a>
+                </div>
+                </a>
+            </div>
+        </div>
+
+    <div class="students">    
+        <h5>Students Enrolled</h5>
+        {% for student in students %}
+        <li>
+            <small>{{student.first_name}}</small>
+        </li>
+        {% endfor %}
+    </div>
+</div>
+{% include 'footer.html' %}
+</body>
+</html>

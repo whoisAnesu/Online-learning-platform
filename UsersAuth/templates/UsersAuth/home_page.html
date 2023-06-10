@@ -1,0 +1,40 @@
+{% extends 'base_home.html' %}
+
+{% block title %}
+<title>Home Page</title>
+{% endblock title %}
+<body>
+{% block content %}
+{% include 'navbar.html' %}
+<section id="showcase">
+    <div class="container">
+        <h1>Notice to all students
+        </h1>
+    </div>
+</section>
+<div class="container">
+    <section id="main">
+        
+            <h1>Notice and News</h1>
+        
+        {% for art in news %}
+        <div class="article">
+            <a href="{% url 'news_page' pk=art.id %}">
+                <h4>{{art.title}}</h4>
+                <p>
+                    {{art.summary}}
+                </p>
+            </a>
+        </div>
+        {% endfor %}    
+    </section>
+    <aside id="sidebar">
+        <h2>Activity</h2>
+        {% include 'news_activity.html' %}
+    </aside>
+    
+    
+</div>
+{% include 'footer.html' %}
+</body>
+{% endblock content %}

@@ -1,0 +1,9 @@
+{% block content %}
+{% for my in mycoursework %}
+    {{my.course_quiz.name}}
+    {{my.the_course}}
+    {{my.the_mark}}
+    {{my.the_remark}}
+    {{my.the_classification}}
+{% endfor %}
+{% endblock content %}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="{% static 'css/login_page_style.css' %}">
+    <script src="login_page_app.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="login_form">
+            <form method="POST" action="">
+                {% csrf_token %}
+                <label>Student Number</label>
+                <input type="text" name="username"  placeholder="Enter Student Number"/>
+                
+                <label>Password</label>
+                <input type="password" name="password"  placeholder="Enter Password"/>
+                
+                <button type="submit" value="login">Login</button>
+
+            </form>
+            <p>dont have an account yet?</p>
+            <a href="">Sign Up</a>
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

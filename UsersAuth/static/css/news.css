@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+
+
+:root {
+    --color-main: #71c6dd;
+    --color-main-light: #e1f6fb;
+    --color-dark: #3f4156;
+    --color-dark-medium: #51546e;
+    --color-dark-light: #696d97;
+    --color-light: #e5e5e5;
+    --color-gray: #8b8b8b;
+    --color-light-gray: #b2bdbd;
+    --color-bg: #2d2d39;
+    --color-success: #5dd693;
+    --color-error: #fc4b0b;
+}
+
+
+* {
+    font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+    /* color: inherit; */
+    font-size: inherit;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 10px;
+    margin-left: 4%;
+    margin-top: 50px;
+    width: 90%;
+    background: var(--color-dark-medium);
+    color: var(--color-main-light);
+}
+.content {
+    padding: 1.5rem;
+    border: 1px solid #333;
+    letter-spacing: 0.1em;
+    font-size: medium;
+    font-weight: 400;
+}
+
+.news_header{
+    padding: 1.5rem;
+    width: 100%;
+    border: 1px solid #333;
+}
+
+.news_comments{
+    padding: 1.5rem;
+    border: 1px solid #333;
+    width: 100%;
+}
+#comment-section{ 
+    display: flex;
+    justify-content: space-between;
+    padding: 7px;
+}
+
+.avatar.avatar--small img {
+    width: 2.5rem;
+    height: 2.5rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.news_comments input{
+    border: none;
+    appearance: none;
+    background: var(--color-light-gray);
+    padding: 12px;
+    border-radius: 3px;
+    width: 250px;
+    outline: none;
+}
+.news_comments input:focus::placeholder{
+    color: #222;
+    transition: color 0.3s ease;
+}

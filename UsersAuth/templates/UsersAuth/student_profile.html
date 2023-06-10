@@ -1,0 +1,49 @@
+{% extends 'base_home.html' %}
+{% load static %}
+
+{% block title %}
+<title>Student profile</title>
+{% endblock title %}
+
+{% block content %}
+{% include 'navbar.html' %}
+
+<style>
+    .Profile{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .person{
+        height: 400px;
+        width: 400px;
+        border: 3px solid #333;
+        margin-top: 50px;
+        padding: 20px;
+    }
+    #myimg{
+        object-fit: cover;
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+    }
+</style>
+
+    <div class="Profile">
+        <div class="person">
+            <img src="{{profile.pic.url}}" id="myimg"></img>
+            <h3>Student Number: {{profile.user.username}}</h3>
+            <h3>First Name: {{profile.user.first_name}}</h3>
+            <h3>Last Name: {{profile.user.last_name}}</h3>
+            <small>Email: {{profile.user.email}}</small>
+            <small>Phone: 0777097453</small>
+            <small>Department: Electronic Engineering</small>
+            <small>address: 1235 tecoms</small>
+            <small>Courses Registered: contr csp eng man</small>
+            <small>Year: 2018</small>
+        </div>
+    </div>
+
+{% include 'footer.html' %}
+{% endblock content %}

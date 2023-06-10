@@ -1,0 +1,12 @@
+{% for news_comment in news_comments %}
+<div id"activity-news">
+    <small>@{{news_comment.creator.first_name}} {{news_comment.added|timesince}} ago</small>
+    <small>replied to "{{news_comment.article}}"</small>
+
+    <p>{{news_comment}}</p>
+    {% if request.user == news_comment.creator %}
+    <a href="{% url 'deleteComment' news_comment.id %}">Delete</a>
+    {% endif %}
+    <hr>
+</div>
+{% endfor %}

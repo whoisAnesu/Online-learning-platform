@@ -1,0 +1,146 @@
+body{
+    background: #3f4156;
+}
+.container{
+    background: #696d97;
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    color: #e5e5e5;
+    padding: 20px;
+    width: 70%;
+    margin-left: 177px;
+}
+.assignment{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    border: 6px solid #8b8b8b;
+    padding: 15px;
+}
+.students{
+    border: 6px solid #8b8b8b;
+    padding: 5px;
+    font-size: medium;
+}
+.students h5{
+    font-size: large;
+    font-weight: 600;
+}
+.students li {
+    list-style: none;
+}
+.resource{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 2px;
+    border: 3px solid #8b8b8b;
+    font-size: medium;
+    font-weight: 400;
+    background: #8b8b8b;
+}
+
+.notice{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    border: 3px solid #8b8b8b;
+}
+.notice h5, h6{
+    text-decoration: none;
+    font-size: large;
+}
+.notice a{
+    color: #e5e5e5;
+}
+.notice a:hover{
+    color: #71c6dd;
+}
+.resource a{
+    color: #e5e5e5;
+}
+.resource a:active{
+    color: #e5e5e5;
+    background: #801b1b;
+}
+.resource a:hover{
+    color: #71c6dd;
+    cursor: pointer;
+}
+.tutorials{
+    background: #51546e;
+    padding: 7px;
+    border: 2px solid #8b8b8b;
+    margin: 5px;
+    transition: 1s ease-in-out;
+}
+.books{
+    background: #51546e;
+    padding: 7px;
+    border: 2px solid #8b8b8b;
+    margin: 5px;
+    transition: 1s ease-in-out;
+}
+.books:hover{
+    transform: scale(0.9);
+}
+.tutorials:hover{
+    transform: scale(0.9);
+}
+#header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.search {
+    border-radius: 5px;
+}
+.search input{
+    border: none;
+    border-radius: 5px;
+    outline: navajowhite;
+}
+.logo{
+
+}
+
+#quiz{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 5px;
+}
+#quiz-div{
+    background: #51546e;
+    padding: 5px;
+    border: 1px solid #3f4156;
+    border-radius: 5px;
+    width: 90%;
+}
+#quiz-div:hover{
+    transform: scaleX(1.1);
+}
+#ass{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+}
+#theass{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: #51546e;
+    padding: 5px;
+    border: 1px solid #3f4156;
+    border-radius: 5px;
+    width: 200px;
+    height: 60px;
+}
+#theass:hover{
+    transform: scaleX(1.1);
+}

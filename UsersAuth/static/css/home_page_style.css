@@ -1,0 +1,127 @@
+body {
+    background-color: #f4f4f4;
+    color: #555;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.6em;
+    margin: 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.main-header {
+    background-color: coral;
+    color: #fff;
+}
+
+.navbar {
+    background-color: rgb(9, 41, 41);
+    color: #f4f4f4;
+}
+
+.navbar a{
+    color: #f4f4f4;
+    padding-right: 15px;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(175, 192, 202);
+}
+
+.navbar ul {
+    padding: 0;
+    list-style: none;
+}
+
+.navbar li {
+    display: inline;
+}
+
+#showcase {
+    background-image: url('img.png');
+    background-position: center right;
+    margin-top: 80px;
+    min-height: 300px;
+    margin-bottom: 30px;
+    color: #f4f4f4;
+    z-index: 2;
+}
+
+#showcase h1 {
+    color: #fff;
+    line-height: 1.6em;
+    font-size: 50px;
+
+}
+
+#main {
+    float: left;
+    width: 70%;
+    padding: 0 30px;
+    box-sizing: border-box;
+    color: rgb(11, 23, 54);
+    border: 3px solid #333;
+
+}
+
+#sidebar {
+    float: right;
+    width: 30%;
+    background-color: #333;
+    color: #d39e4e;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.article {
+    background: #8b8b8bb7;
+    border: 1px solid #333;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 9px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 400;
+    transition: 0.5s ease-in-out;
+}
+.article:hover{
+    transform: scale(0.9);
+    cursor: pointer;
+}
+.article a{
+    color: rgba(7, 10, 36, 0.959);
+    text-decoration: none;
+}
+.article a:hover{
+    color: rgb(209, 73, 10);
+}
+
+#main-footer {
+    background: #333;
+    color: #939778;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+@media(max-width:600px) {
+    #main{
+        width: 100%;
+        float: none;
+    }
+    #sidebar{
+        width: 100%;
+        float: none;
+    }
+}
+
+#comments-input {
+    width: 60%;
+    height: auto;
+}

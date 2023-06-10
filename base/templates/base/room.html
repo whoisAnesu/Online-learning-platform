@@ -1,0 +1,74 @@
+{% load static %}
+{% block content %}
+<link rel='stylesheet' type='text/css' media='screen' href="{% static 'styles/room.css' %}"></link>
+
+<style>
+    .room-container {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+
+    }
+</style>
+{% include 'room-nav.html' %}
+<div class="room-container">
+    <div class="room-details">
+            <div class="room-header">
+                <h2>{{room.name}}</h2>
+
+                <p>{{room.description}}</p>
+
+                <div class="comment-wrapper">
+                    <h3>Conversation</h3>
+                    <hr>
+            </div>
+            <div class="room-message">
+                {% for message in roommessages %}
+                    <div class="user-detail">
+                        <div class="avatar avatar--small">
+                            <img src="{{message.user.profile.pic.url}}" />
+                            @{{message.user}}
+                        </div>
+                        <small> {{message.created|timesince}} ago</small>
+                    </div>
+                    <div class="message-body"><p>{{message.body}}</p></div>
+                    <hr>
+                    {% if request.user == message.user %}
+                    <a href="{% url 'delete-message' message.id %}">Delete</a>
+                    {% endif %}
+                {% endfor %}
+
+                {% if request.user.is_authenticated %}
+                    <div class="comment-form">
+                        <form method="POST" action="">
+                            {% csrf_token %}
+                            <input type="text" name="body" placeholder="write your messages here ......" />
+                        </form>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+
+    <div class="participants">
+        <h3>Participants</h3>
+        <hr>
+        <div class="activities__box">
+            {% for user in participants%}
+            <div>
+                <div class="avatar avatar--small">
+                    <img src="{{user.profile.pic.url}}" />
+                </div>
+                <p>@{{user.username}}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</div>
+<script>
+    
+    console.log("man")
+</script>
+{% include 'footer.html' %}
+{% endblock content %}

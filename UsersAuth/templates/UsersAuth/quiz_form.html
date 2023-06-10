@@ -1,0 +1,22 @@
+{% load crispy_forms_tags %}
+<div>
+    <h1>Question</h1>
+    <form method="POST" action="">
+        {% csrf_token %}
+        <label>Question</label>
+        <input type="text" name="question"  placeholder="question here"/>
+        {% for quiz in allquiz %}
+        <option value='{{ quiz.id }}' name="quis">{{ quiz.name }}</option>
+        {% endfor %}
+        <label>Answer</label>
+        <input type="text" name="answer" placeholder"answer">
+        <input type="checkbox" name="correct" placeholder"correct">
+        <label>Answer</label>
+        <input type="text" name="answer" placeholder"answer">
+        <input type="checkbox" name="correct" placeholder"correct">
+        <label>Answer</label>
+        <input type="text" name="answer" placeholder"answer">
+        <input type="checkbox" name="correct" placeholder"correct">
+        <input type="submit" value="Submit" />
+    </form>
+</div>

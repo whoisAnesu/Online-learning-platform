@@ -1,0 +1,41 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/news.css' %}">
+{% block title %}
+<title>News Page</title>
+{% endblock title %}
+{% block content %}
+<div class="container">
+    
+
+    <div class="news_header">
+        <h1>{{article.title}}</h1>
+        <small>@{{article.journalist}}</small>
+    </div>
+    <div class="content"><p>{{article.content}}</p></div>
+    <div class="news_comments">
+        <h2>Comments</h2>
+        {% for comment in newscomment %}
+        <div id="comment-section">
+            <div class="avatar avatar--small">
+                <img src="{{comment.creator.profile.pic.url}}" />
+                <small>@{{comment.creator.first_name}}</small>
+            </div>
+            <div>
+                <small>{{comment.added|timesince}} ago</small>
+            </div>
+        </div>
+        <p>{{comment.text}}</p>
+                {% if request.user == comment.creator %}
+                    <a href="{% url 'deleteComment2' comment.id %}">Delete</a>
+                {% endif %}
+                <hr>
+        {% endfor %}
+        <form method="POST" action="">
+            {% csrf_token %}
+            <input type="text" name="body" placeholder="write your commenents here ......" />
+        </form>
+    </div>
+</div>
+{% endblock content %}
+
+{% include 'footer.html' %}

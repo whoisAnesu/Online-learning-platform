@@ -1,0 +1,32 @@
+{% load static %}
+{% block title %}
+    <title>Course Page</title>
+{% endblock title %}
+<link rel="stylesheet" href="{% static 'css/allcs.css' %}">
+
+{% block content %}
+<header id="header">
+    <div class="logo">
+        <a href="{% url 'home' %}"><img src="{% static 'images/book.png'%}" alt="" class="logo"></a>
+    </div>
+    <a href="{% url 'register' pk=students.user_id %}">
+    <div>
+        <h2>register here</h2>
+    </div>
+    </a>
+    <div class="search">  
+        <form  method="GET" action="{% url 'rooms_home' %}">
+            <input type="text" name="q" placeholder="Search Here...."/>
+        </form>
+    </div>
+</header>
+<div class="container">
+    {% for cos in courses %}
+        <a href="{% url 'course' pk=cos.id%}">
+            <div class="course-div">
+                <h5>{{cos.title}}</h5>
+            </div>
+        </a>
+    {% endfor %}
+</div>
+{% endblock content %}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    <title>Welcome Page</title>
+    {% endblock title %}
+    <link rel="stylesheet" href="{% static 'css/home_page_style.css' %}">
+</head>
+
+<body>
+
+    {% block  content %}
+
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+        <section id="showcase">
+            <div class="container">
+                <h1>Notice to all students
+                </h1>
+            </div>
+        </section>
+        <div class="container">
+            <section id="main">
+                <h1>Notice and News</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, autem fuga 
+                    consequatur illo aliquam asperiores modi est quo provident. Qui quae iure corporis 
+                    dolore illum magnam. Aperiam mollitia dolores cumque!
+                </p>
+            </section>
+            <aside id="sidebar">
+                <h2>Comments</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem iusto, quo harum odit illo aspernatur ad, atque
+                in officiis, sint hic temporibus facilis. Nesciunt consectetur 
+                labore sed eos minima provident!
+                </p>
+            </aside>
+            
+        </div>
+    {% endblock content %}
+    
+</body>
+</html>

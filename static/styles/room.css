@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+
+
+:root {
+    --color-main: #71c6dd;
+    --color-main-light: #e1f6fb;
+    --color-dark: #3f4156;
+    --color-dark-medium: #51546e;
+    --color-dark-light: #696d97;
+    --color-light: #e5e5e5;
+    --color-gray: #8b8b8b;
+    --color-light-gray: #b2bdbd;
+    --color-bg: #2d2d39;
+    --color-success: #5dd693;
+    --color-error: #fc4b0b;
+}
+
+
+* {
+    font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+    /* color: inherit; */
+    font-size: inherit;
+}
+
+.room-container {
+    background: #3f4156;
+    display: grid;
+    grid-template-columns:4fr 1fr;
+    margin-top: 1px;
+}
+.room-header {
+    color: #dac3c3;
+    padding: 10px;
+    
+}
+.room-header h2{
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--color-light);
+    letter-spacing: 1px;
+}
+.room-details{
+    margin-bottom: 2.4rem;
+    background-color: var(--color-dark);
+    border-radius: 1rem;
+    padding: 2rem;
+}
+.room-message{
+    padding: 10px;
+
+}
+.participants{
+    background: var(--color-dark);
+    border-radius: 5px;
+    overflow: hidden;
+    color: #dac3c3;
+}
+.activities__box {
+    margin: 1.5rem;
+    padding: 1.5rem;
+    border: 2px solid var(--color-dark-medium);
+    border-radius: 5px;
+}
+.message-body{
+    margin-top: 20px;
+}
+.user-detail{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.avatar.avatar--small img {
+    width: 2.8rem;
+    height: 2.8rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.avatar.avatar--small:after {
+    width: 0.7rem;
+    height: 0.7rem;
+    bottom: 0px;
+    right: -6px;
+}
+
+.room-message input{
+    border: none;
+    appearance: none;
+    background: var(--color-light-gray);
+    padding: 12px;
+    border-radius: 3px;
+    width: 250px;
+    outline: none;
+}
+.room-message input:focus::placeholder{
+    color: #222;
+    transition: color 0.3s ease;
+}

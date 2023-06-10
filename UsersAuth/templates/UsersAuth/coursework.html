@@ -1,0 +1,34 @@
+{% block content %}
+<div id="results">
+    <h1>Results</h1>
+{% for mymak in mymark %}
+<div id="res">
+    <p>      Course:      {{mymak.the_course}}</p>
+    <p>      Mark:        {{mymak.the_mark}}</p>
+    <p>      Remark:      {{mymak.the_remark}}</p>
+    <p>      Classification:    {{mymak.the_classification}}</p>
+</div>
+{% endfor%}
+<br>
+</div>
+<style>
+#results{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #333;
+    background-color: #3f4156;
+}
+#res{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #333;
+    padding: 15px;
+    width: 400px;
+    height: 300px;
+    background-color: #e1f6fb;
+}
+</style>
+
+{% endblock content %}
